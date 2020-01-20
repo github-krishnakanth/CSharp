@@ -8,7 +8,7 @@ namespace PropertiesDemo
 {
     public class Program
     {
-        public double Radius = 45.33;
+        public double _Radius = 45.33;
 
         /*public double GetRadius()
         {
@@ -22,10 +22,14 @@ namespace PropertiesDemo
 
             //(or)
 
-        public double RadiusProperty
+        public double Radius
         {
-            get { return Radius; }
-            set { Radius = value; }
+            get { return _Radius; }
+            set 
+            {   
+                if(_Radius > value)
+                _Radius = value; 
+            }
         }
     }
 
@@ -40,7 +44,12 @@ namespace PropertiesDemo
             Console.WriteLine("Radius : " + p.Radius);
             Console.ReadLine();*/
 
+                    //(or)
 
+            Console.WriteLine("Radius is : " + p.Radius);
+            p.Radius = 43.22;
+            Console.WriteLine("New Radius is : " + p.Radius);
+            Console.ReadLine();
         }
     }
 }
